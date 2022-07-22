@@ -1,0 +1,38 @@
+=====================================
+ Emulate NPC Scripting - JavaScript
+=====================================
+
+1. Download IntelliJ IDE 
+
+2. Open up the project in IntelliJ, go to the top and select Build -> Build Project
+
+3. Open up the file `SmokeScript.java` in IntelliJ 
+
+4. In the file view, right click the file name header for "SmokeScript.java", and in the drop down menu select:
+	"Run SmokeScript.main()"
+
+5. You'll see a pop-up dialog box appear with options for which script to execute.
+
+6. To Add more scripts to this project, create a new .js script under the scripts/ directory. Then go to Config.java,
+and add a new script to the array following the format - {"Selection string for the choice-box", "scriptname.js"}
+(note: make sure that every line in the array has a comma ',' at the end of it, after the }, except for the last listing)
+
+7. To Add new methods to this project, you can add methods to the following java files:
+	- ScriptSysFunc.java
+		- Methods added to this class will be usable in the script via the "self" variable
+		- ex:  
+			self.AskMenu(
+				"What would you like to do?",
+				["Option 1", "Option 2", "Option 3"]
+			);
+
+	- User.java
+		- Methods added to this class will be available in the script via the "pUser" variable
+		- ex:
+			pUser.SetNexonCash(pUser.GetNexonCash() - 1000);
+			pUser.TransferField(910000000);
+
+8. You can get crazier but this is the basic implementation of our sources NPC script engine, so you can build and practice
+making basic NPC scripts ~
+
+Any questions, see google and the repository owner in listed order ~
